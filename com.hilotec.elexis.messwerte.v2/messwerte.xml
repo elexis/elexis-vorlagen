@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<datatypes>
+	<datatype name="ALLGSTAT" title="Messwerte">
+		<numfield 	name="groesse"		title="Grösse" 			unit="cm" default="0" />
+		<numfield 	name="gewicht"		title="Gewicht" 		unit="kg" />
+		<calcfield 	name="bmi"		title="BMI" places="2">
+			<var name="gewicht" source="gewicht" />
+			<var name="groesse" source="groesse" />
+			<formula interpreter="beanshell">
+				if (groesse == 0) return 0;
+				return Math.round(gewicht/(groesse*groesse/10000)*10)/10.0;
+			</formula>
+		</calcfield>
+		<numfield	name="bdsys"		title="Systolischer Blutdruck" 	unit="mm Hg" />
+		<numfield	name="bddia"		title="Diastolischer Blutdruck"	unit="mm Hg" />
+		<numfield	name="puls"		title="Puls"			unit="1/Min" />
+		<numfield	name="hfreq"		title="Herzfrequenz"		unit="1/Min" />
+		<enumfield 	name="pulsrhytm" 	title="Arrhytmie" default="0">
+			<option value="0" title="rhythmisch" />
+			<option value="1" title="Extrasystolen" />
+			<option value="2" title="absolute Arrhythmie" />
+		</enumfield>
+		<numfield	name="atfr"		title="Atemfrequenz"		unit="1/Min" />
+		<numfield	name="biox"		title="Biox"			unit="SpO2%" />
+		<numfield	name="bodytemp"		title="Körpertemperatur"	unit="Grad C" />
+		<strfield	name="frei"		title="Bemerkung" />
+
+	</datatype>
+
+	
+	<datatype name="FAMAN" title="Fam Anamn">
+		<enumfield name="FamAn" title="Familienanamnese" default="0">
+			<option value="0" title="keine" />
+			<option value="1" title="Mutter" />
+			<option value="2" title="Vater" />
+			<option value="3" title="Brüder" />
+			<option value="4" title="Schwestern" />
+			<option value="5" title="Kinder" />
+			<option value="6" title="Grossmutter ms" />
+			<option value="7" title="Grossmutter vs" />
+			<option value="8" title="Grossvater ms" />
+			<option value="9" title="Grossvater vs" />
+			<option value="10" title="Urgrossmutter ms" />
+			<option value="11" title="Urgrossmutter vs" />
+			<option value="12" title="Urgrossvater ms" />
+			<option value="13" title="Urgrossvater vs" />
+			<option value="14" title="Enkel" />
+			<option value="15" title="Tante(n) ms" />
+			<option value="16" title="Tante(n) vs" />
+			<option value="17" title="Onkel ms" />
+			<option value="18" title="Onkel vs" />
+		</enumfield>
+
+		<numfield name="anzahl"	title="Anzahl" default="1" />
+		<strfield name="frei" title="Beschreibung" lines="5" />
+	</datatype>
+	
+	
+	<datatype name="RISKFAKT" title="Risikofaktoren">
+		<numfield name="nikotin" title="Nikotin (Py)" />
+		<strfield name="nikotin_bis" title="Nikotin Ende Datum" />
+
+		<boolfield name="arthypertonie" title="Arterielle Hypertonie" />
+
+		<enumfield name="diabetes" title="Diabetes Mellitus" default="0">
+			<option value="0" title="kein" />
+			<option value="1" title="insulindependent" />
+			<option value="2" title="non insulindependent" />
+		</enumfield>
+
+		<boolfield name="hyperlip" title="Hyperlipidämie" />
+
+		<boolfield name="adipositas" title="Adipositas" />
+
+		<boolfield name="bewegungsmangel" title="Bewegungsmangel" />
+
+		<boolfield name="stress_privat" title="Stress privat" />
+		<boolfield name="stress_beruflich" title="Stress beruflich" />
+
+		<enumfield name="drugabuse" title="Drogen" default="0">
+			<option value="0" title="kein" />
+			<option value="1" title="Alkohol" />
+			<option value="2" title="Tranquilizer" />
+			<option value="3" title="THC" />
+			<option value="4" title="Opiumderivate" />
+			<option value="5" title="Methadon" />
+			<option value="6" title="Sonstige" />
+		</enumfield>
+
+		<strfield name="frei" title="Beschreibung" />
+
+	</datatype>
+</datatypes>
