@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateProcessingInstruction:ProcessInstruction xmlns:TemplateProcessingInstruction="http://www.medelexis.ch/templator" template="AgendaListe.odt" directoutput="true"><TemplateProcessingInstruction:field name="termine">[Termine]</TemplateProcessingInstruction:field><TemplateProcessingInstruction:processor name="OpenOffice-Processor" /><TemplateProcessingInstruction:field name="mandant">[Mandant.Vorname] [Mandant.Name]</TemplateProcessingInstruction:field></TemplateProcessingInstruction:ProcessInstruction>
