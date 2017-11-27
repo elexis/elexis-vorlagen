@@ -56,7 +56,14 @@ Stand: Elexis 3.1 (Ohne Gewähr)
 
     Vorlage für Terminkarte mit kommenden Terminen des Patienten
 
+* Anmeldung_Rx_Kispi.xml
 
+    Anmeldung Röntgen Kinderspital Zürich
+
+* Ergotherapie_F82.xml
+
+    Verordnung zur Ergotherapie
+    
 ## Weitere Hinweise
 
 * https://wiki.elexis.info/Auswahl.Text_Plugins
