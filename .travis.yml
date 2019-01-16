@@ -1,0 +1,28 @@
+---
+
+dist: xenial
+language: java
+jdk: openjdk8 # oraclejdk8 is no longer supported by travis-ci
+services:
+  - xvfb
+
+env:
+  global:
+  - JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+  - PATH=$(echo "$PATH" | sed -e 's/:\/usr\/local\/lib\/jvm\/openjdk11\/bin//')
+
+
+before_install:
+  # Debian has since stretch an OCR-B font and a fonts-ocr-a
+  # Xenial (Ubuntu en general?) only has fonts-ocr-a
+  - sudo apt-get install -y lowriter fonts-ocr-a
+
+script: tests/odt_2_pdf.sh
+
+notifications:
+  email:
+  - niklaus.giger@member.fsf.org
+
+cache:
+  directories:
+  - $HOME/.m2
