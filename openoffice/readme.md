@@ -1,5 +1,7 @@
 ## Grundsätzliches
 
+See also ../readme.md
+
 Hier findet man  Vorlagen, welche für das Medelexis Text-Templator plugin gemacht wurden.
 
 Sie stammen https://medelexis.ch/index.php?id=154 Dokumentvorlagen OpenOffice
